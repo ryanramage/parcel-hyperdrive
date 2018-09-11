@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@beaker/webdb": "^4.3.1",
+    "dat-archive-web": "^1.1.0",
     "hyperdrive": "^9.14.0",
     "random-access-idb": "^1.0.4",
     "uws-stream": "^1.1.3",
