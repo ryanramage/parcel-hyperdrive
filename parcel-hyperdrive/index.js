@@ -8,22 +8,8 @@ const url = `ws://50.65.72.243:3000/${key}`
 const archive = hyperdrive(ram, key)
 archive.once('ready',  () => {
   const socket = Websocket(url)
-  let rstream = archive.replicate()
-  rstream.on('finish', () => { console.log('replication complete')  })
-  socket.pipe(rstream).pipe(socket)
-  console.log(archive)
+  socket.pipe(archive.replicate()).pipe(socket)
   const h = archive.history({tail: true, live: true})
   h.on('data', (d) => { console.log('data:', d)  })
-
-  archive.readdir('/', function (err, list) {
-    if (err) throw err
-    console.log(list)
-    //setInterval(() => {
-    //    archive.readFile('/people/ryan.json', 'utf-8', function (err, data) {
-    //        if (err) throw err
-    //        console.log(data) // prints 'world'
-    //    })
-    // }, 2000)
-  })
 })
 
