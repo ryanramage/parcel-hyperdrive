@@ -1,7 +1,13 @@
 {
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "dependencies": {
     "@jimpick/hyperdrive-next": "^9.12.3-5",
     "random-access-idb": "^1.0.4",
     "websocket-stream": "^5.1.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.9.7"
   }
 }
